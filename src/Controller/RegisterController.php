@@ -13,9 +13,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class RegisterController extends AbstractController
 {
     #[Route('/inscription', name: 'app_register')]
-    public function index(Request $request,EntityManagerInterface $entityManagerInterface): Response
+    public function index(Request $request, EntityManagerInterface $entityManagerInterface): Response
     {
-        $user= new User(); 
+        $user= new User();
+        
         $form = $this->createForm(RegisterUserType::class, $user);
 
         $form->handleRequest($request);
