@@ -13,7 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class RegisterController extends AbstractController
 {
     #[Route('/inscription', name: 'app_register')]
-    public function index(Request $request, EntityManagerInterface $entityManagerInterface): Response
+    public function register(Request $request, EntityManagerInterface $entityManagerInterface): Response
     {
         $user= new User();
         
@@ -28,7 +28,7 @@ class RegisterController extends AbstractController
             $entityManagerInterface->flush();
         }
         
-        return $this->render('register/index.html.twig', [
+        return $this->render('register/register.html.twig', [
             'registerForm' => $form->createView()
         ]);
     }
