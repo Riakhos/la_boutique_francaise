@@ -32,6 +32,10 @@ class AccountController extends AbstractController
         // Si le formulaire est soumis alors :
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManagerInterface->flush();
+            $this->addFlash(
+                'success',
+                'Votre mot de passe est correctement mis à jour.'
+            );
         }
         
         return $this->render('account/password.html.twig', [
