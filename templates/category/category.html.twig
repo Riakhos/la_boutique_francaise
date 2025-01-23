@@ -6,6 +6,14 @@
 
         <p>Cette catégorie contient {{ category.products|length }} produit(s).</p>
 
-        {{ dump(category) }}
+        <div class="row">
+            {% for product in category.products %}                
+                <div class="col-md-3 text-center">
+                    <img src="/uploads/{{ product.image }}" class="img-fluid">
+                    <strong>{{ product.name }}</strong>
+                    <span class="d-block">{{ product.priceWt }}</span>
+                </div>
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}
