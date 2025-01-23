@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container my-5 w-auto">
+        <h1>{{ category.name }}</h1>
+
+        <p>Cette catégorie contient {{ category.products|length }} produit(s).</p>
+
+        {{ dump(category) }}
+    </div>
+{% endblock %}
