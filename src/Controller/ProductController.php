@@ -13,6 +13,10 @@ class ProductController extends AbstractController
     public function product($slug, ProductRepository $productRepository): Response
     {
         $product = $productRepository->findOneBySlug($slug);
+
+        if (!$product) {
+            return $this->redirectToRoute('app_home');
+        }
         
         return $this->render('product/product.html.twig', [
             'controller_name' => 'ProductController',
