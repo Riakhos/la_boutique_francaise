@@ -16,7 +16,7 @@ class AppExtensions extends AbstractExtension implements GlobalsInterface
 		$this->categoryRepository = $categoryRepository;
 	}
 	
-	public function getFilters()
+	public function getFilters(): array
 	{
 		return [
 			new TwigFilter('price', [$this, 'formatPrice'])
