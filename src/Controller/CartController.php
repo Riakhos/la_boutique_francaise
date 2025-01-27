@@ -34,4 +34,11 @@ class CartController extends AbstractController
             'slug' => $product->getSlug()
         ]);
     }
+    #[Route('/cart/remove', name: 'app_cart_remove')]
+    public function remove(Cart $cart): Response
+    {
+        $cart->remove();
+        
+        return $this->redirectToRoute('app_home');
+    }
 }
