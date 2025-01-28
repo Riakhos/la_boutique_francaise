@@ -44,7 +44,9 @@
                             {% endif %}
                             <a href="{{ path('app_cart') }}">
                                 <i data-feather="shopping-cart"></i>
-                                <span class="badge text-bg-light">{{ fullCartQuantity }}</span>
+                                {% if fullCartQuantity > 0 %}
+                                    <span class="badge text-bg-light">{{ fullCartQuantity }}</span>
+                                {% endif %}
                             </a>
                         </div>
                     </div>
