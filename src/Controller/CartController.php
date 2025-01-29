@@ -12,9 +12,9 @@ use Symfony\Component\HttpFoundation\Request;
 class CartController extends AbstractController
 {
     #[Route('/mon-panier', name: 'app_cart')]
-    public function cart(Cart $cart): Response
+    public function index(Cart $cart): Response
     {
-        return $this->render('cart/cart.html.twig', [
+        return $this->render('cart/index.html.twig', [
             'cart' => $cart->getCart(),
             'totalWt' => $cart->getTotalWt(),
             'total' => $cart->getTotal(),

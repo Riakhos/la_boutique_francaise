@@ -13,7 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class RegisterController extends AbstractController
 {
     #[Route('/inscription', name: 'app_register')]
-    public function register(Request $request, EntityManagerInterface $entityManagerInterface): Response
+    public function index(Request $request, EntityManagerInterface $entityManagerInterface): Response
     {
         $user= new User();
         
@@ -33,7 +33,7 @@ class RegisterController extends AbstractController
             return $this->redirectToRoute('app_login');
         }
         
-        return $this->render('register/register.html.twig', [
+        return $this->render('register/index.html.twig', [
             'registerForm' => $form->createView()
         ]);
     }
