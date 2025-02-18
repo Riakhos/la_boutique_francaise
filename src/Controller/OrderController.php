@@ -70,8 +70,7 @@ class OrderController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid() ) {
-            //Stocker les informations en BDD
-
+            
             //Création de la chaîne adresse
             $addressObj = $form->get('addresses')->getData();
             $address = $addressObj->getFirstname(). ' - '.$addressObj->getLastname().'<br/>';
@@ -80,7 +79,9 @@ class OrderController extends AbstractController
             $address .= $addressObj->getCountry().'<br/>';
             $address .= $addressObj->getPhone();
             
+            //Stocker les informations en BDD
             $order = new Order();
+            $order->setUser($this->getUser());
             $order->setCreatedAt(new \DateTime());
             $order->setState(1);
             $order->setCarrierName($form->get('carriers')->getData()->getName());
