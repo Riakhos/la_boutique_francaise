@@ -16,19 +16,29 @@ class OrderType extends AbstractType
     {
         $builder
             ->add('addresses', EntityType::class, [
-                'label' => 'Choisissez votre adresse de livraison',
+                'label' => '<strong>Choisissez votre adresse de livraison</strong>',
+                'label_html' => true,
                 'required'=> true,
                 'class' => Address::class,
                 'expanded' => true,
                 'choices' => $options['addresses'],
-                'label_html' => true
+                'attr' => [
+                    'class' => 'bg-light-blue p-3',
+                    'style' => 'max-width: 800px; margin: 0 auto;'
+                ]
+
             ])
             ->add('carriers', EntityType::class, [
-                'label' => 'Choisissez votre transporteur de livraison',
+                'label' => '<strong>Choisissez votre transporteur de livraison</strong>',
+                'label_html' => true,
                 'required'=> true,
                 'class' => Carrier::class,
                 'expanded' => true,
-                'label_html' => true
+                'label_html' => true,
+                'attr' => [
+                    'class' => 'bg-light-blue p-3',
+                    'style' => 'max-width: 800px; margin: 0 auto;;'
+                ],
             ])
             ->add('submit', SubmitType::class, [
                 'label'=> 'Valider',
