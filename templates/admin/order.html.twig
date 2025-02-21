@@ -6,8 +6,11 @@
 	{{ include('admin/state.html.twig', { field: {'value': order.state } }) }}
 	<br/>
 	<span>Passée le : {{ order.createdAt|date('d/m/y') }}</span>
+	<br/>
 	<span>Stripe Session Id : {{ order.stripeSessionId }}</span>
+	<br/>
 	<hr>
+
 	<div class="row my-4">
 		<div class="col-md-6">
 			<strong>Adresse de livraison :</strong><br/>
@@ -18,6 +21,7 @@
 			{{ order.carrierName }}
 		</div>
 	</div>
+	<hr>
 
 	<strong>Contenu de la commande :</strong><br/>
 
@@ -58,7 +62,7 @@
 		</tbody>
 	</table>
 
-	<div class="text-start fs-5">
+	<div class="text-start">
 		<strong>Total H.T : </strong>{{ (order.totalWt - order.totalTva)|price }}<br/>
 		<strong>Total TVA : </strong>{{ order.totalTva|price }}<br/>
 		<strong>Total T.T.C : </strong>{{ order.totalWt|price }}
