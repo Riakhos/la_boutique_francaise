@@ -9,6 +9,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
@@ -40,6 +41,10 @@ class ProductCrudController extends AbstractCrudController
             TextField::new('name')
                 ->setLabel('Nom')
                 ->setHelp('Nom de votre produit')
+            ,
+            BooleanField::new('isHomepage')
+                ->setLabel('Produit à la une ?')
+                ->setHelp('Vous permet d\'afficher un produit sur la homepage')
             ,
             SlugField::new('slug')
                 ->setLabel('URL')
