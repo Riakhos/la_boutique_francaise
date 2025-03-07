@@ -43,7 +43,7 @@ class OrderController extends AbstractController
     }
 
     /**
-     * 2mé  Étape du tunnel d'achat
+     * 2éme  Étape du tunnel d'achat
      * Récap de la commande de l'utilisateur
      * Insertion en BDD
      * Préparation du paiement vers stripe
