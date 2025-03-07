@@ -35,7 +35,7 @@ class PasswordUserType extends AbstractType
                         'message' => 'Veuillez fournir un mot de passe.'
                     ]),
                     new Length([
-                        'min' => 4,
+                        'min' => 12,
                         'max' => 30,
                         'minMessage' => 'Le mot de passe doit contenir au moins {{ limit }} caractères.',
                         'maxMessage' => 'Le mot de passe ne peut pas dépasser {{ limit }} caractères.'
