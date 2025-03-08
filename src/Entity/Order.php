@@ -23,7 +23,9 @@ class Order
     /**
      * 1 : En attente de paiement
      * 2 : Paiement validé
-     * 3 : Expédié
+     * 3 : En cours de préparation
+     * 4 : Expédié
+     * 5 : Annulé
      *
      * @var integer|null
      */

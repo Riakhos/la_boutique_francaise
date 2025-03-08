@@ -55,7 +55,7 @@ class WishlistController extends AbstractController
         if ($product) {
             $this->addFlash(
                 'success',
-                'Produit correctement supprimé à votre liste de souhait.'
+                'Produit correctement supprimé de votre liste de souhait.'
             );
             
             /** @var \App\Entity\User $user */

@@ -10,7 +10,7 @@ class Mail
 	public function send($to_email, $to_name, $subject, $template, $vars = null)
 	{
         //Récupération du template
-        $content = file_get_contents(dirname(__DIR__).'Mail/'.$template);
+        $content = file_get_contents(dirname(__DIR__).'/Mail/'.$template);
 
         // Récupération d es variables facultatives
         if ($vars) {
