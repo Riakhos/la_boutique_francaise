@@ -15,7 +15,11 @@ class Mail
         // Récupération d es variables facultatives
         if ($vars) {
             foreach ($vars as $key => $var) {
-                str_replace('{'.$key.'}', $var, $content);
+                // Si c'est un lien, on échappe les caractères spéciaux
+                if (filter_var($var, FILTER_VALIDATE_URL)) {
+                    $var = htmlspecialchars($var, ENT_QUOTES, 'UTF-8');
+                }
+                $content = str_replace('{'.$key.'}', $var, $content);
             }
         }
         

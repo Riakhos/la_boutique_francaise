@@ -12,11 +12,11 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class PasswordController extends AbstractController
 {
-	private $entityManagerInterface;
+	private $em;
     
-    public function __construct(EntityManagerInterface $entityManagerInterface)
+    public function __construct(EntityManagerInterface $em)
     {
-        $this->entityManagerInterface = $entityManagerInterface;
+        $this->em = $em;
     }
 	
 	#[Route('/compte/modifier-mot-de-passe', name: 'app_account_modify_pwd')]
@@ -32,7 +32,7 @@ class PasswordController extends AbstractController
         
         // Si le formulaire est soumis alors :
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->entityManagerInterface->flush();
+            $this->em->flush();
             $this->addFlash(
                 'success',
                 'Votre mot de passe est correctement mis à jour.'
