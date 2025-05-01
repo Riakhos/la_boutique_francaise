@@ -12,7 +12,7 @@ class Mail
         //Récupération du template
         $content = file_get_contents(dirname(__DIR__).'/Mail/'.$template);
 
-        // Récupération d es variables facultatives
+        // Récupération des variables facultatives
         if ($vars) {
             foreach ($vars as $key => $var) {
                 // Si c'est un lien, on échappe les caractères spéciaux

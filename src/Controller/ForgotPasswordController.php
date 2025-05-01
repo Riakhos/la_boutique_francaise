@@ -22,6 +22,7 @@ class ForgotPasswordController extends AbstractController
     {
         $this->em =$em;
     }
+    
     #[Route('/mot-de-passe-oublie', name: 'app_password')]
     public function index(Request $request, UserRepository $userRepository): Response
     {
